@@ -16,18 +16,25 @@
          // TODO: SWAP SHIFTED KEYS SOMEHOW
          default_layer {
  // ------------------------------------------------------------------------------------------------------------
- // |  ESC  |  !  |  @  |   #  |   $   |   %   |   ^   |  |   &   |   *   |  (    |  )    |  -   |   +   |   `   |
- // |  TAB  |  Q  |  W  |   E  |   R   |   T   |   [   |  |   ]   |   Y   |  U    |  I    |  O   |   P   |   \   |
- // | SHIFT |  A  |  S  |   D  |   F   |   G   |   (   |  |   )   |   H   |  J    |  K    |  L   |   ;   |   '   |
- // |  CTRL |  Z  |  X  |   C  |   V   |   B   |       |  |       |   N   |  M    |  ,    |  .   |   /   | ENTER |
- //         | XXX | ALT |  GUI | ENTER | RAISE | LOWER |  | RAISE | LOWER | SPACE | BSPC  | UNDO |   DO  |
- //
+ // |  ESC  |  1  |  2  |   3  |   4   |   5   |       |  |       |   6   |  7    |  8    |  9   |   0   |   =   |
+ // |  TAB  |  Q  |  W  |   E  |   R   |   T   |       |  |       |   Y   |  U    |  I    |  O   |   P   |   -   |
+ // | SHIFT |  A  |  S  |   D  |   F   |   G   |       |  |       |   H   |  J    |  K    |  L   |   ;   |   '   |
+ // |  CTRL |  Z  |  X  |   C  |   V   |   B   |       |  |       |   N   |  M    |  ,    |  .   |   /   | RSHIFT|
+ //               | UARR| DARR |                                                  | UARR  | DARR | 
+ //                            | BKSPC |  DEL  |                  | ENTER | SPACE |
+ //                                    | LCTRL | LGUI  |  | RGUI  | RCTRL |
+ //                                    | LOWER | LALT  |  | RALT  | RAISE |
              bindings = <
- &kp ESC    &kp EXCL &kp AT   &kp HASH &kp DOLLAR &kp PRCNT &kp CARET          &kp AMPS    &kp ASTRK &kp LPAR  &kp RPAR  &kp MINUS   &kp EQUAL   &kp GRAVE
- &kp TAB    &kp Q    &kp W    &kp E    &kp R      &kp T     &kp LBKT           &kp RBKT    &kp Y     &kp U     &kp I     &kp O       &kp P       &kp BSLH
- &kp LSHFT  &kp A    &kp S    &kp D    &kp F      &kp G     &kp LPAR           &kp RPAR    &kp H     &kp J     &kp K     &kp L       &kp SEMI    &kp SQT
- &kp LCTRL  &kp Z    &kp X    &kp C    &kp V      &kp B                                    &kp N     &kp M     &kp COMMA &kp DOT     &kp FSLH    &kp ENTER
-            &none    &kp LALT &kp LGUI &kp ENTER  &mo 2     &mo 1              &mo 2       &mo 1     &kp SPACE &kp BSPC  &kp LG(Z)   &kp LG(LS(Z))
+ &kp ESC    &kp 1    &kp 2    &kp 3    &kp 4      &kp 5                        &kp 6     &kp 7       &kp 8     &kp 9     &kp 0       &kp EQUAL   
+ &kp TAB    &kp Q    &kp W    &kp E    &kp R      &kp T     &kp LBKT           &kp Y     &kp U       &kp I     &kp O     &kp P       &kp MINUS
+ &kp LSHFT  &kp A    &kp S    &kp D    &kp F      &kp G     &kp LPAR           &kp H     &kp J       &kp K     &kp L     &kp SEMI    &kp SQT
+ &kp LCTRL  &kp Z    &kp X    &kp C    &kp V      &kp B                        &kp N     &kp M       &kp COMMA &kp DOT   &kp SLASH   &kp RSHFT
+                     &kp RIGHT_ARROW &kp LEFT_ARROW                                                  &kp UP    &kp DOWN
+                                       &kp BACKSPACE &kp DEL                   &kp ENTER &kp SPACE
+                                        &kp LCTRL  &kp LGUI                   &kp RGUI &kp RCTRL
+                                         &mo lower_layer &kp LALT            &kp ALT &mo raise_layer
+
+
              >;
  
              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -35,17 +42,17 @@
  
          lower_layer {
  // ------------------------------------------------------------------------------------------------------------
- // |       |  F1 | F2  |  F3  |  F4  |  F5  |   F6   |  |       |  F7  |  F8   |  F9   |  F10  |  F11  |  F12  |       |
- // |       |     |     |      |      |      |        |  |       |      |   7   |   8   |   9   |       |       |       |
- // |       |     |     |      |      |      |        |  |       |      |   4   |   5   |   6   |   *   |       |       |
- // |       |     |     |      |      |      |        |  |       |      |   1   |   2   |   3   |   /   |       |       |
- //               |     |      |      |      |        |  |       |      |       |       |       |   0   |   .   |       |
+ //         |  F1 | F2  |  F3  |  F4  |  F5  |   F6   |       |   |      |  F7   |  F8   |  F9   |  F10  |  F11  |  F12  | 
+ //         |     |     |      |      |      |        |       |   |      |   7   |   8   |   9   |   +   |       | 
+ //         |     |     |      |      |      |        |       |   |      |   4   |   5   |   6   |   *   |       | 
+ //         |     |     |      |      |      |        |       |   |      |   1   |   2   |   3   |   /   |       | 
+ //               |     |      |      |      |        |       |   |      |       |   0   |       |   -   |   .   | 
              bindings = <
- &trans    &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6          &kp F7   &kp F8     &kp F9    &kp F10   &kp F11   &kp F12         &trans
- &trans    &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &kp KP_N7 &kp KP_N8 &kp KP_N9 &trans          &trans
- &trans    &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY &trans
- &trans    &trans    &trans    &trans    &trans    &trans                              &trans    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DIVIDE   &trans
-           &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &kp KP_N0 &kp KP_DOT
+           &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6          &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12
+           &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp PLUS 
+           &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_MULTIPLY
+           &trans    &trans    &trans    &trans    &trans                              &trans    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_DIVIDE  
+           &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans KP_N0 &trans &kp MINUS &kp DOT
              >;
          };
  

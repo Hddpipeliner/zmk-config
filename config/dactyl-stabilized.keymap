@@ -16,18 +16,18 @@
          // TODO: SWAP SHIFTED KEYS SOMEHOW
          default_layer {
  // ------------------------------------------------------------------------------------------------------------
- // |  ESC  |  !  |  @  |   #  |   $   |   %   |   ^   |  |   &   |   *   |  (    |  )    |  -   |   +   |   `   |
- // |  TAB  |  Q  |  W  |   E  |   R   |   T   |   [   |  |   ]   |   Y   |  U    |  I    |  O   |   P   |   \   |
- // | SHIFT |  A  |  S  |   D  |   F   |   G   |   (   |  |   )   |   H   |  J    |  K    |  L   |   ;   |   '   |
- // |  CTRL |  Z  |  X  |   C  |   V   |   B   |       |  |       |   N   |  M    |  ,    |  .   |   /   | ENTER |
- //         | XXX | ALT |  GUI | ENTER | RAISE | LOWER |  | RAISE | LOWER | SPACE | BSPC  | UNDO |   DO  |
- //
-             bindings = <
- &kp ESC    &kp EXCL &kp AT   &kp HASH &kp DOLLAR &kp PRCNT &kp CARET          &kp AMPS    &kp ASTRK &kp LPAR  &kp RPAR  &kp MINUS   &kp EQUAL   &kp GRAVE
- &kp TAB    &kp Q    &kp W    &kp E    &kp R      &kp T     &kp LBKT           &kp RBKT    &kp Y     &kp U     &kp I     &kp O       &kp P       &kp BSLH
- &kp LSHFT  &kp A    &kp S    &kp D    &kp F      &kp G     &kp LPAR           &kp RPAR    &kp H     &kp J     &kp K     &kp L       &kp SEMI    &kp SQT
- &kp LCTRL  &kp Z    &kp X    &kp C    &kp V      &kp B                                    &kp N     &kp M     &kp COMMA &kp DOT     &kp FSLH    &kp ENTER
-            &none    &kp LALT &kp LGUI &kp ENTER  &mo 2     &mo 1              &mo 2       &mo 1     &kp SPACE &kp BSPC  &kp LG(Z)   &kp LG(LS(Z))
+ // |  ESC  |  1  |  2  |   3  |   4   |   5   |       |  |   6   |   7   |  8    |  9    |  0   |   =   |       |
+ // |  TAB  |  Q  |  W  |   E  |   R   |   T   |       |  |   Y   |   U   |  I    |  O    |  P   |   -   |       |
+ // | SHIFT |  A  |  S  |   D  |   F   |   G   |       |  |   H   |   J   |  K    |  L    |  ;   |   '   |       |
+ // |  CTRL |  Z  |  X  |   C  |   V   |   B   |       |  |   N   |   M   |  ,    |  .    |  /   | Shift |       |
+ //         | LEFT|RIGHT| BSPC |  DEL  |       |       |  | RAISE | LOWER | ENTER | SPACE |  UP  |   DO  |
+
+ bindings = <
+ &kp ESC    &kp 1    &kp 2    &kp 3    &kp 4      &kp 5     &kp                &kp 6       &kp 7     &kp 8     &kp 9     &kp 0       &kp EQUAL   &kp 
+ &kp TAB    &kp Q    &kp W    &kp E    &kp R      &kp T     &kp LBKT           &kp Y       &kp U     &kp I     &kp O     &kp P       &kp MINUS   &kp 
+ &kp LSHFT  &kp A    &kp S    &kp D    &kp F      &kp G     &kp LPAR           &kp H       &kp J     &kp K     &kp L     &kp SEMI    &kp COLON   &kp 
+ &kp LCTRL  &kp Z    &kp X    &kp C    &kp V      &kp B                                    &kp N     &kp M     &kp COMMA &kp DOT     &kp R_SHIFT &kp 
+            &none    &kp LALT &kp LGUI &kp ENTER  &mo 2     &mo 1              &mo 2       &mo 1     &kp ENTER &kp SPACE &kp UP   &kp DOWN
              >;
  
              sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
